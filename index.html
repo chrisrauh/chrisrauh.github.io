@@ -6,27 +6,56 @@
     />
     <link rel="human-json" href="/human.json" />
     <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+      }
       .background {
         background-color: deeppink;
       }
       .center-screen {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         text-align: center;
         min-height: 100vh;
+        gap: 20px;
       }
       .text {
-        font-size: calc(1.5rem + 10vw);
+        font-size: 200px;
         font-family: Helvetica, sans-serif;
         color: dodgerblue;
+        text-box-trim: trim-both;
+      }
+      .arrow-down {
+        display: none;
+      }
+      .anatomical-heart {
+        display: flex;
+        justify-content: center;
+        width: 140px;
+      }
+      @media screen and (max-width: 700px) {
+        .center-screen {
+          flex-direction: column;
+          gap: 0;
+        }
+        .arrow-right {
+          display: none;
+        }
+        .arrow-down {
+          display: initial;
+        }
       }
     </style>
   </head>
   <body class="background">
     <div class="center-screen">
-      <p class="text">❤️ ➡ 🫀</p>
+      <div class="text">❤️</div>
+      <div class="text arrow-right">➡</div>
+      <div class="text arrow-down">⬇</div>
+      <div class="anatomical-heart"><div class="text">🫀</div></div>
     </div>
   </body>
 </html>
